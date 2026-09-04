@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Daniel Carvalho is a Data and Analytics Consultant specializing in exploratory data analysis, NLP, spatial intelligence, and interactive BI dashboards.">
+  <title>Daniel Carvalho — Data and Analytics Consultant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #f4f1e9;
+      --paper: #090a09;
+      --muted: #8f938b;
+      --line: rgba(244, 241, 233, .19);
+      --lime: #d7f36a;
+      --coral: #f47b62;
+      --blue: #7ca7ff;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: Manrope, sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
+    .mono { font-family: "DM Mono", monospace; font-size: .7rem; letter-spacing: .04em; text-transform: uppercase; }
+
+    header { display: flex; justify-content: space-between; align-items: center; padding: 28px 0; border-bottom: 1px solid var(--line); }
+    .brand { display: flex; align-items: center; gap: 11px; font-weight: 800; font-size: .95rem; }
+    .mark { width: 30px; height: 30px; display: grid; place-items: center; color: var(--ink); background: var(--paper); border-radius: 50%; font-size: .72rem; }
+    nav { display: flex; gap: 30px; color: #a6aaa1; font-size: .8rem; }
+    nav a:hover, .text-link:hover { color: var(--coral); }
+
+    .hero { min-height: 650px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 50px; align-items: center; padding: 90px 0 110px; }
+    h1 { max-width: 700px; margin: 0; font-size: clamp(3.4rem, 8vw, 7.4rem); line-height: .94; letter-spacing: -.075em; font-weight: 800; }
+    h1 em { color: var(--coral); font-style: normal; }
+    .hero-copy { max-width: 530px; margin: 34px 0 0 5px; color: #b1b4ac; font-size: 1.05rem; line-height: 1.7; }
+    .actions { display: flex; gap: 13px; margin-top: 34px; }
+    .button { display: inline-flex; align-items: center; gap: 12px; padding: 14px 19px; border: 1px solid var(--ink); font-size: .78rem; font-weight: 700; transition: transform .2s, background .2s; }
+    .button:hover { transform: translateY(-3px); }
+    .button.primary { background: var(--paper); color: var(--ink); }
+    .button.primary:hover { background: var(--coral); border-color: var(--coral); }
+    .button.secondary { background: transparent; }
+
+    .hero-art { position: relative; min-height: 395px; }
+    .art-card { position: absolute; inset: 35px 18px 35px 30px; padding: 28px; display: flex; align-items: flex-end; color: var(--ink); background: #292929; box-shadow: 14px 14px 0 var(--coral); }
+    .art-title { color: var(--ink); font-size: 2rem; line-height: .98; letter-spacing: -.05em; font-weight: 800; }
+    .art-title span { color: var(--ink); }
+
+    .ticker { height: 22px; overflow: hidden; background: var(--coral); }
+    .ticker-inner { min-height: 22px; }
+
+    section { padding: 125px 0; border-bottom: 1px solid var(--line); }
+    .section-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 55px; }
+    h2 { margin: 0; font-size: clamp(2.2rem, 4vw, 4.5rem); letter-spacing: -.07em; line-height: 1; }
+    .section-number { color: var(--muted); }
+    .project-list { border-top: 1px solid var(--line); }
+    .project { display: grid; grid-template-columns: 1fr 90px; gap: 0 28px; align-items: center; padding: 0 0 28px; margin-bottom: 28px; border-bottom: 1px solid var(--line); transition: padding .25s, background .25s; }
+    .project:hover { padding-left: 18px; padding-right: 18px; background: rgba(244, 241, 233, .07); }
+    .project-image { width: 100%; height: 224px; display: block; grid-column: 1 / -1; object-fit: cover; border: 1px solid var(--line); margin-bottom: 17px; }
+    .project-year { color: var(--muted); grid-column: 1; grid-row: 2; }
+    .project > span:nth-of-type(2) { grid-column: 1 / -1; grid-row: 3; }
+    .project h3 { margin: 0 0 9px; font-size: 1.35rem; letter-spacing: -.04em; }
+    .project p { max-width: 480px; margin: 0; color: var(--muted); line-height: 1.55; font-size: .88rem; }
+    .project-type { color: var(--coral); text-align: right; }
+    .about-portrait { width: 145px; height: 145px; display: block; object-fit: cover; object-position: center top; margin: 0 0 28px; border: 4px solid var(--coral); filter: saturate(.82) contrast(1.05); }
+
+    .about { display: block; }
+    .about > .facts { margin-bottom: 105px; }
+    .about-text { font-size: 1.35rem; line-height: 1.55; letter-spacing: -.03em; }
+    .about-text strong { color: var(--coral); }
+    .facts { border-top: 1px solid var(--line); }
+    .fact { display: flex; justify-content: space-between; gap: 20px; padding: 17px 0; border-bottom: 1px solid var(--line); color: var(--muted); }
+    .fact b { color: var(--ink); font-weight: 600; text-align: right; }
+
+    .contact { display: grid; grid-template-columns: 1fr 1fr; gap: 12%; padding-bottom: 145px; }
+    .contact h2 { max-width: 520px; }
+    .contact-copy { color: var(--muted); line-height: 1.7; max-width: 350px; }
+    .contact-email { display: inline-block; margin-top: 25px; font-size: 1.25rem; font-weight: 700; border-bottom: 2px solid var(--coral); }
+    footer { display: flex; justify-content: space-between; padding: 25px 0 35px; color: var(--muted); }
+    footer a { margin-left: 25px; }
+
+    @media (max-width: 700px) {
+      .wrap { width: min(100% - 32px, 1160px); }
+      header { padding: 20px 0; }
+      nav { gap: 15px; font-size: .68rem; }
+      .hero { display: block; min-height: auto; padding: 75px 0 85px; }
+      h1 { font-size: clamp(3.3rem, 17vw, 6rem); }
+      .hero-art { min-height: 300px; margin-top: 60px; }
+      .art-card { inset: 25px 12px 25px 16px; }
+      section { padding: 85px 0; }
+      .section-head { margin-bottom: 35px; }
+      .project { grid-template-columns: 1fr 45px; gap: 8px; }
+      .project-image { width: 100%; height: 150px; grid-column: 1 / -1; }
+      .project-year { grid-column: 1; grid-row: 2; }
+      .project-type { grid-column: 2; grid-row: 2; }
+      .project > span:nth-of-type(2) { grid-column: 1 / -1; grid-row: 3; }
+      .about, .contact { display: block; }
+      .about-text { margin-bottom: 55px; font-size: 1.15rem; }
+      .contact-copy { margin-top: 35px; }
+      footer { font-size: .65rem; }
+      footer a { margin-left: 13px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#top"><span class="mark">DC</span> Daniel Carvalho</a>
+      <nav class="mono" aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div>
+          <h1>Using data<br>to solve<br><em>problems.</em></h1>
+          <p class="hero-copy">I build analytical models and data solutions that help you track what matters, identify operational friction, and offer practical solutions.</p>
+          <div class="actions">
+            <a class="button primary" href="#work">See selected work <span>↘</span></a>
+            <a class="button secondary" href="mailto:danielmsrcarvalho@gmail.com">Get in touch <span>↗</span></a>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Abstract graphic representing thoughtful systems">
+          <div class="art-card"><div class="art-title">Data Analyst<br><span>and Consultant.</span></div></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="ticker" aria-hidden="true"><div class="wrap ticker-inner"></div></div>
+
+  <div class="wrap">
+    <section id="work">
+      <div class="section-head"><h2>Selected work</h2><span class="section-number mono">(01 — 06)</span></div>
+      <div class="project-list">
+        <a class="project" href="https://github.com/danielcarvalho1/Mapping-and-visualizing-factories-pollutant-data-in-Europe" target="_blank" rel="noreferrer">
+          <img class="project-image" src="https://raw.githubusercontent.com/danielcarvalho1/Mapping-and-visualizing-factories-pollutant-data-in-Europe/main/all_countries_pollution_radar_charts.png" alt="European pollution radar charts">
+          <span class="project-year mono">Project / 01</span>
+          <span><h3>Industrial pollutant and air quality intelligence</h3><p>Comparative analysis of European emissions, PM2.5, NO2, O3, and AQI, delivered through radar charts and an interactive Dash dashboard.</p></span>
+          <span class="project-type mono">Dash ↗</span>
+        </a>
+        <a class="project" href="https://github.com/danielcarvalho1/Interior-mais-" target="_blank" rel="noreferrer">
+          <img class="project-image" src="https://raw.githubusercontent.com/danielcarvalho1/50Layers/main/arqpt_cooccurrence_heatmap.png" alt="Text analysis co-occurrence heatmap">
+          <span class="project-year mono">Project / 02</span>
+          <span><h3>Historical text mining and development trends</h3><p>NLP pipeline using Arquivo.pt web data to classify socioeconomic discourse around rural abandonment and regional development in Portugal.</p></span>
+          <span class="project-type mono">NLP ↗</span>
+        </a>
+        <a class="project" href="https://github.com/danielcarvalho1/PCA_TALOS" target="_blank" rel="noreferrer">
+          <img class="project-image" src="https://raw.githubusercontent.com/danielcarvalho1/PCA_TALOS/main/pca_talos.png" alt="PCA concept clustering plot">
+          <span class="project-year mono">Project / 03</span>
+          <span><h3>High-dimensional NLP and PCA clustering</h3><p>Principal Component Analysis applied to an 8,000+ document corpus to reveal interpretable semantic and thematic clusters.</p></span>
+          <span class="project-type mono">R / PCA ↗</span>
+        </a>
+        <a class="project" href="https://github.com/danielcarvalho1/Computer-Vision-for-vegetation-detection-with-satellite-imagery" target="_blank" rel="noreferrer">
+          <img class="project-image" src="https://raw.githubusercontent.com/danielcarvalho1/Computer-Vision-for-vegetation-detection-with-satellite-imagery/main/VNSP2025.jpg" alt="Satellite image computer vision output">
+          <span class="project-year mono">Project / 04</span>
+          <span><h3>Satellite surface and vegetation detection</h3><p>Computer vision pipeline using HSV masking to quantify aerial and satellite imagery features and export structured metrics.</p></span>
+          <span class="project-type mono">Vision ↗</span>
+        </a>
+        <a class="project" href="https://github.com/danielcarvalho1/50Layers" target="_blank" rel="noreferrer">
+          <img class="project-image" src="https://raw.githubusercontent.com/danielcarvalho1/50Layers/main/tae_keyword_network.png" alt="Keyword co-occurrence network">
+          <span class="project-year mono">Project / 05</span>
+          <span><h3>Bibliometric and keyword co-occurrence mining</h3><p>Longitudinal text-mining workflows for research journals, with co-occurrence networks and automated dataset exports.</p></span>
+          <span class="project-type mono">Mining ↗</span>
+        </a>
+        <a class="project" href="https://github.com/danielcarvalho1/Genetic-Analysis-of-cDNA-microarray" target="_blank" rel="noreferrer">
+          <img class="project-image" src="Volcano-Plot%20(1).jpeg" alt="Volcano plot for genomic microarray analysis">
+          <span class="project-year mono">Project / 06</span>
+          <span><h3>Genomic microarray analysis</h3><p>Statistical and genetic differential expression analysis across patient cohorts using bioinformatic methods in R.</p></span>
+          <span class="project-type mono">R / Bio ↗</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="facts mono"><div class="fact"><span>Focus</span><b>Operations analytics, CRM</b></div><div class="fact"><span>Toolkit</span><b>Python, R, Power BI, AI, Machine Learning, SQL</b></div><div class="fact"><span>Specialties</span><b>EDA, NLP, BI systems</b></div><div class="fact"><span>Reach out</span><b><a class="text-link" href="https://github.com/danielcarvalho1" target="_blank" rel="noreferrer">GitHub ↗</a> <a class="text-link" href="https://www.linkedin.com/in/daniel-msr-carvalho" target="_blank" rel="noreferrer">LinkedIn ↗</a></b></div></div>
+      <div><img class="about-portrait" src="https://avatars.githubusercontent.com/u/59537580?v=4" alt="Daniel Carvalho"><div class="section-head"><h2>ABOUT ME</h2></div><p class="about-text">I am Daniel Carvalho, a <strong>Data and Analytics Consultant</strong> who translates complex datasets, from unstructured text and satellite pixels to core operational metrics, into clear intelligence people can act on.<br><br>Combining the analytical rigor of a PhD in Archaeology and Artificial Intelligence and being in the final stages of a MSc in Data Science with a passion for business problem-solving, I specialize in building end-to-end BI systems, exploratory analytics, and automated pipelines. Whether diagnosing process bottlenecks, tracking vital KPIs, or aligning cross-functional teams around actionable insights, I bring energy, precision, and a relentless focus on delivering measurable operational clarity. I enjoy everything related to machines, AI, and the potential of tech for tackling problems.</p></div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Have a good problem?</h2>
+      <div><p class="contact-copy">Tell me what you are trying to measure, model, or understand. I turn complex questions into useful analytical work.</p><a class="contact-email" href="mailto:danielmsrcarvalho@gmail.com">danielmsrcarvalho@gmail.com ↗</a></div>
+    </section>
+
+    <footer class="mono"><span>© 2026 Daniel Carvalho</span><span><a href="#top">Back to top ↑</a><a href="https://www.linkedin.com/in/daniel-msr-carvalho" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/danielcarvalho1" target="_blank" rel="noreferrer">GitHub ↗</a></span></footer>
+  </div>
+</body>
+</html>
