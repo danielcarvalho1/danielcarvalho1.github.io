@@ -55,10 +55,11 @@
     .section-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 55px; }
     h2 { margin: 0; font-size: clamp(2.2rem, 4vw, 4.5rem); letter-spacing: -.07em; line-height: 1; }
     .section-number { color: var(--muted); }
-    .project-list { border-top: 1px solid var(--line); }
-    .project { display: grid; grid-template-columns: 1fr 90px; gap: 0 28px; align-items: center; padding: 0 0 28px; margin-bottom: 28px; border-bottom: 1px solid var(--line); transition: padding .25s, background .25s; }
+    .project-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; border-top: 1px solid var(--line); }
+    .project { display: grid; grid-template-columns: 1fr 90px; gap: 0 20px; align-items: center; padding: 28px 0; margin-bottom: 0; border-bottom: 1px solid var(--line); transition: padding .25s, background .25s; }
     .project:hover { padding-left: 18px; padding-right: 18px; background: rgba(244, 241, 233, .07); }
-    .project-image { width: 100%; height: 224px; display: block; grid-column: 1 / -1; object-fit: cover; border: 1px solid var(--line); margin-bottom: 17px; }
+    .project-image { width: 100%; aspect-ratio: 16 / 9; height: auto; display: block; grid-column: 1 / -1; object-fit: cover; border: 1px solid var(--line); margin-bottom: 17px; }
+    .project-image.project-logo { object-fit: contain; padding: 28px; background: #292929; }
     .project-year { color: var(--muted); grid-column: 1; grid-row: 2; }
     .project > span:nth-of-type(2) { grid-column: 1 / -1; grid-row: 3; }
     .project h3 { margin: 0 0 9px; font-size: 1.35rem; letter-spacing: -.04em; }
@@ -91,8 +92,9 @@
       .art-card { inset: 25px 12px 25px 16px; }
       section { padding: 85px 0; }
       .section-head { margin-bottom: 35px; }
-      .project { grid-template-columns: 1fr 45px; gap: 8px; }
-      .project-image { width: 100%; height: 150px; grid-column: 1 / -1; }
+      .project-list { display: block; }
+      .project { grid-template-columns: 1fr 45px; gap: 8px; margin-bottom: 28px; }
+      .project-image { width: 100%; aspect-ratio: 16 / 9; height: auto; grid-column: 1 / -1; }
       .project-year { grid-column: 1; grid-row: 2; }
       .project-type { grid-column: 2; grid-row: 2; }
       .project > span:nth-of-type(2) { grid-column: 1 / -1; grid-row: 3; }
@@ -139,7 +141,7 @@
       <div class="section-head"><h2>Selected work</h2><span class="section-number mono">(01 — 07)</span></div>
       <div class="project-list">
         <a class="project" href="https://github.com/danielcarvalho1/Panoptes" target="_blank" rel="noreferrer">
-          <img class="project-image" src="https://raw.githubusercontent.com/danielcarvalho1/Panoptes/main/Panoptes_logo.png" alt="Panoptes archaeological survey simulator logo">
+          <img class="project-image project-logo" src="https://raw.githubusercontent.com/danielcarvalho1/Panoptes/main/Panoptes_logo.png" alt="Panoptes archaeological survey simulator logo">
           <span class="project-year mono">Project / 01</span>
           <span><h3>Panoptes: survey strategy under uncertainty</h3><p>Reproducible research prototype for sequential archaeological survey using noisy observations, spatial modelling, and interpretable reinforcement-learning baselines.</p></span>
           <span class="project-type mono">RL / Spatial ↗</span>
